@@ -43,6 +43,8 @@ If the goal is unclear, ask what the reader should think, feel, or do after read
 
 Banned outright: delve, foster, leverage, utilize, facilitate, empower, streamline, robust, cutting-edge, paradigm shift, game changer, this is huge, this changes everything, tapestry, realm, beacon, multifaceted, meticulous, intricate, paramount, transformative, elevate, embark, supercharge, harness, ever-evolving.
 
+Banned in the "signal vs. noise" sense or when used as a vague synonym for "indicator," "data point," or "meaningful information": signal. Keep it only when it refers to a literal signal (electronic, biological, mathematical) and the meaning would be lost with any other word.
+
 Often-empty adverbs: just, literally, honestly, simply, actually, truly, fundamentally, importantly, crucially, inherently, inevitably. Cut them when they add nothing. Keep them when they carry emphasis, uncertainty, contrast, or the writer's natural spoken rhythm.
 
 Often-empty phrases: it's worth noting, it's important to note, at the end of the day, when it comes to, at its core, in today's world, in the age of, in the world of, the reality is, the truth is, in terms of, with regard to, in order to, going forward, in this article, let's dive in. Cut them when they delay the point. Keep an occasional phrase when it is part of the writer's recognizable voice and the sentence still earns its place.
@@ -79,15 +81,77 @@ Often-empty phrases: it's worth noting, it's important to note, at the end of th
 
 **Summary-recap endings.** "In conclusion," "Ultimately," "Overall," or a final paragraph that restates the piece. The reader was just there. End on the last concrete point, takeaway, or next action instead.
 
-**Formatting slop.** Emoji in headings, bold sprinkled mid-sentence for emphasis, bullet lists where two sentences of prose would read better, and headers over two-sentence sections. Format should follow the content, not decorate it.
+**Formatting slop.** No emoji anywhere. No bold sprinkled mid-sentence for emphasis. No bullet lists — convert them to prose unless the user explicitly requested a list. No headers over two-sentence sections. Format should follow the content, not decorate it.
 
-**Em dashes.** Do not use them as a default rhythm crutch. In short copy, use none. In longer drafts, 1-2 are fine if they clearly beat commas, periods, or parentheses. Remove clusters and decorative dashes.
+**Em dashes.** Do not use them. Replace with a comma, period, or parentheses. Remove all em dashes regardless of draft length.
+
+## Format detection and overrides
+
+Before editing, identify the format. Infer it from context clues (subject line = email, @handle = Slack, hashtags = LinkedIn, etc.). If unclear, ask: "Where will this be published?"
+
+Once you know the format, apply the universal rules above, then apply the overrides below. Overrides only list where the defaults flip — everything else stays.
+
+**Slack and chat messages**
+Fragments and short sentences are native to the medium, not slop. Bullets are acceptable for genuinely list-shaped content (action items, options). Emoji are allowed when they carry a functional meaning (a checkmark, a status, a tone marker) — cut them when they are decorative. No salutation, no sign-off. Ruthless length: if it takes more than 3–4 sentences to make the point, ask whether it belongs in a document instead.
+
+**Email**
+Subject line must earn the open: specific, not clever. One clear call to action per email. "Following up," "circling back," and "per my last email" are sometimes necessary context, not always slop — keep them when they genuinely orient the reader. Salutation and sign-off are expected. Internal emails should be shorter than external ones.
+
+**Blog and long-form essay**
+Headers are appropriate for navigation in pieces over 600 words. Numbered lists are acceptable for steps, procedures, or ranked items where order matters. Allow longer setup when it creates genuine context or argument. The fake-profound kicker ban applies with extra force here — this is where writers most often reach for a tidy metaphor to close.
+
+**Newsletter**
+Section headers and a clear structure are expected. Consistent voice across the issue matters more than in a one-off piece. Subject line and preview text carry the same weight as a blog headline. The summary-recap ban still applies to individual sections; a brief orienting sentence at the top of the issue is fine.
+
+**LinkedIn**
+All universal rules apply. Apply the universal rules with extra scrutiny — LinkedIn has its own slop layer on top of generic AI slop. Additional patterns to cut:
+
+- Performative humility openers: "Excited to announce," "Humbled to share," "Thrilled to join," "Honored to be." State the news directly.
+- Wall-of-white-space formatting: one sentence per line to manufacture drama. Reflow into real paragraphs.
+- Engagement bait closers: "Drop a comment below," "What do you think?", "Tag someone who needs to hear this," "I'd love to know your thoughts." Cut them. If the piece is good, readers will respond.
+- Irrelevant autobiographical hooks: "Six months ago I was sitting in a coffee shop..." when the story has nothing to do with the point. Cut to the claim.
+- The hook-story-lesson-CTA structure when it's mechanical. Use it only if the story genuinely earns the lesson.
+
+## Voice notes
+
+Before editing, check whether `voice-notes.md` exists in this skill's directory. If it does, read it first. It contains patterns this specific writer keeps, cuts harder than the defaults, or handles differently from the universal rules. Treat entries there as overrides with higher priority than the general rules.
 
 ## Workflow
 
 1. Read the full draft before editing.
-2. Identify the core point and 3-5 voice signals to preserve, such as vocabulary, cadence, bluntness, humor, uncertainty, or digressions. Keep this note internal. If you cannot identify the core point, ask the user.
-3. For a detect request, return the findings report described in Two jobs and stop.
-4. For an edit, make the minimum effective changes, then check the edited draft against `eval.md` yourself.
-5. If any check fails, fix the draft and run the checks again.
-6. Output the full edited draft and a short **What changed** section.
+2. Load `voice-notes.md` if it exists. Note any writer-specific overrides.
+3. Identify the format. Apply the relevant overrides from the Format detection section.
+4. Identify the core point and 3–5 voice markers to preserve — vocabulary, cadence, bluntness, humor, uncertainty, digressions. Keep this note internal. If you cannot identify the core point, ask the user.
+5. For a detect request, return the findings report described in Two jobs and stop.
+6. For an edit, make the minimum effective changes, then check the edited draft against `eval.md` yourself.
+7. If any check fails, fix the draft and run the checks again.
+8. Output the full edited draft and a short **What changed** section.
+9. After outputting, ask: "Did you revise this further before publishing? If so, paste your final version — I'll compare it to my edit and note what I got wrong."
+
+## Learning from feedback
+
+When the user pastes their final version after step 9, do the following:
+
+**Compare the three versions:** original draft, your rewrite, and the human's final. You are looking for the delta between your rewrite and the human's final — not the delta between the original and the final.
+
+**Classify each change the human made to your rewrite into one of four categories:**
+
+- **Restored**: the human put something back that you cut (signals you over-edited)
+- **Cut further**: the human removed something you left in (signals you under-edited)
+- **Reworded**: the human changed your phrasing (signals a voice or tone mismatch)
+- **Restructured**: the human moved something (signals a misjudgment about order or emphasis)
+
+**Name the pattern behind each change.** Do not just list the diff — identify what rule or habit it reflects. Examples: "Writer prefers shorter sentences than the default," "Writer keeps 'actually' for emphasis," "Writer avoids passive construction even when the skill left one in," "Writer uses comma splices deliberately."
+
+**Propose specific additions to `voice-notes.md`.** Format each as a named entry with: what the pattern is, an example from this session, and what the skill should do differently next time. Example:
+
+```
+## Keeps intentional comma splices
+The writer uses comma splices as a rhythm device ("I looked at the data, it didn't add up").
+Do not treat these as errors. Leave them unless they genuinely confuse the reader.
+Example: [quote from session]
+```
+
+**Ask before writing.** Show the proposed entries and ask: "Should I add these to voice-notes.md?" If yes, write them. If the user edits a proposed entry, use their version. If they decline an entry, do not add it.
+
+If no meaningful delta exists between your rewrite and the human's final, say so briefly: "Your final version is close to my edit — nothing new to log." Do not manufacture lessons from noise.

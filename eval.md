@@ -4,6 +4,12 @@ Use this after the rewrite. Answer each check with pass or fail. If any check fa
 
 For detect requests, make sure the response names each pattern found with a quoted line and a short fix, without rewriting the draft.
 
+## Format
+
+1. Was the format identified before editing began?
+2. Were the correct format overrides applied — bullets/emoji allowed for Slack, headers allowed for long blog posts, LinkedIn slop patterns checked?
+3. Were universal rules correctly distinguished from format-specific overrides, so Slack fragments weren't treated as slop and blog bullets weren't left unchecked?
+
 ## Editing principles
 
 1. Does the edit preserve the user's point without adding claims, examples, stats, quotes, or opinions?
@@ -20,6 +26,7 @@ For detect requests, make sure the response names each pattern found with a quot
 ## Words to cut
 
 1. Are banned words, filler phrases, often-empty adverbs, and inflated claims removed unless quoted as examples?
+2. Is "signal" removed wherever it means indicator, data point, or meaningful information — and kept only for literal signals (electronic, biological, mathematical)?
 
 ## Patterns to cut
 
@@ -28,9 +35,9 @@ For detect requests, make sure the response names each pattern found with a quot
 3. Are importance puffery and weasel attribution replaced with plain facts and named sources, or flagged for the user when no source exists?
 4. Are fake-profound kicker lines deleted instead of rewritten into better metaphors?
 5. Are summary-recap endings cut so the piece ends on a concrete point, takeaway, or next action?
-6. Is formatting slop removed: Emoji headings, decorative bold, bullets that should be prose, headers over tiny sections?
+6. Is all formatting slop removed: no emoji anywhere, no decorative bold, no bullet lists (converted to prose), no headers over tiny sections?
 7. Are colons sentence case unless grammar, a proper noun, a title, or code requires otherwise?
-8. Are em dashes used sparingly: Usually none in short copy, and only 1-2 in longer drafts when they clearly help?
+8. Are all em dashes removed and replaced with commas, periods, or parentheses?
 
 ## Final read
 
