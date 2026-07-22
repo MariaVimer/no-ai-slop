@@ -2,7 +2,7 @@
 
 A personal fork of [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop), customized for Claude.
 
-Removes 20+ patterns of AI slop from writing. Also detects slop on request without rewriting. Works on emails, Slack messages, LinkedIn posts, newsletters, and long-form essays — each format has its own rule overrides.
+The original removes 20+ patterns of AI slop from writing. This fork has a few extra rules on thing I personally edit out from LLM generated content. All shown below. It also enforces the fundamentals: lead with the point, use active voice, prefer concrete numbers over abstractions.
 
 ## What it catches
 
@@ -24,7 +24,7 @@ Removes 20+ patterns of AI slop from writing. Also detects slop on request witho
 | Em dashes *(new)* | replaced with comma, period, or parentheses |
 | Vague buzzword *(new)* | "delve," "signal," "signal vs. noise" |
 
-It also enforces the fundamentals: lead with the point, use active voice, prefer concrete numbers over abstractions.
+
 
 ## What's different from the original
 
