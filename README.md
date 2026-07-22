@@ -19,7 +19,10 @@ Removes 20+ patterns of AI slop from writing. Also detects slop on request witho
 | Synonym cycling | the agent, then the assistant, then the tool |
 | Negative listing | "Not a X. Not a Y. A Z." |
 | Dramatic fragmentation | "That's it. That's the whole thing." |
-| LinkedIn slop | "Humbled to share...", wall-of-white-space, engagement bait |
+| Bullet lists | converted to prose unless explicitly requested |
+| Emoji | removed everywhere |
+| Em dashes | replaced with comma, period, or parentheses |
+| "Signal" as vague buzzword | "key signals," "weak signals," "signal vs. noise" |
 
 It also enforces the fundamentals: lead with the point, use active voice, prefer concrete numbers over abstractions.
 
