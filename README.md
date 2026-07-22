@@ -30,8 +30,6 @@ Paste this into Claude Code, Codex, or your favorite AI harness:
 
 ## Use
 
-The skill has two jobs. Editing is the main one.
-
 **1. Edit a draft.** Paste it and invoke the skill:
 
 ```
@@ -40,7 +38,7 @@ The skill has two jobs. Editing is the main one.
 [your draft]
 ```
 
-You get back the edited draft plus a short What changed section. The skill makes the minimum effective edit, then checks its own work against [eval.md](eval.md) without requiring separate agents.
+You get back the edited draft plus a short What changed section. The skill makes the minimum effective edit, then checks its own work against [eval.md](eval.md).
 
 **2. Detect slop.** Ask whether a piece reads as AI:
 
@@ -50,17 +48,16 @@ You get back the edited draft plus a short What changed section. The skill makes
 [the text]
 ```
 
-You get every pattern it found, each with the quoted line and a suggested fix. It doesn't rewrite, score the draft, or guess whether AI wrote it. AI detectors guess. Named patterns are evidence you can check yourself.
+You get every pattern it found each with the quoted line.
 
 ## Files
 
-1. `SKILL.md`: The editing rules and workflow. The whole skill.
+1. `SKILL.md`: The editing rules and workflow.
 2. `eval.md`: Pass/fail checks the skill runs on its own edits.
-3. `agents/openai.yaml`: Metadata so the skill shows up in app UIs.
 
 ## Who made this
 
-I'm [Peter Yang](https://creatoreconomy.so). I led product teams at Roblox, Reddit, and Twitch for 10+ years, and now I teach busy professionals how to become AI builders. This is one skill from my personal AI operating system. The full library, including my courses and workflows, lives at [Behind the Craft](https://behindthecraft.com).
+This is one skill from my personal AI operating system. The full library, including my courses and workflows, lives at [Behind the Craft](https://behindthecraft.com).
 
 ## License
 
