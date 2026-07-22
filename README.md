@@ -1,6 +1,6 @@
 # No AI slop
 
-A personal fork of [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop), customized for Claude Code.
+A personal fork of [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop), customized for Claude.
 
 Removes 20+ patterns of AI slop from writing. Also detects slop on request without rewriting. Works on emails, Slack messages, LinkedIn posts, newsletters, and long-form essays — each format has its own rule overrides.
 
