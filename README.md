@@ -1,10 +1,10 @@
 # No AI slop
 
-This skill removes 20+ patterns of AI slop from your writing and it can also help you detect slop. 
+This skill removes 17 patterns of AI slop from your writing and it can also help you detect slop.
 
 ## What it catches
 
-The patterns it detects includes:
+The patterns it detects include:
 
 | Pattern | Smells like |
 |---------|-------------|
@@ -20,29 +20,13 @@ The patterns it detects includes:
 | Negative listing | "Not a X. Not a Y. A Z." |
 | Dramatic fragmentation | "That's it. That's the whole thing." |
 
-It also enforces the boring fundamentals that make writing good: Front-load the point, active voice, one idea per sentence, concrete numbers over abstractions.
+It also enforces the fundamentals that make writing good: Lead with the point when it helps, use active voice, untangle hard-to-follow sentences, and prefer concrete numbers over abstractions.
 
 ## Install
 
-Claude Code (all projects):
+Paste this into Claude Code, Codex, or your favorite AI harness:
 
-```bash
-git clone https://github.com/petergyang/no-ai-slop.git ~/.claude/skills/no-ai-slop
-```
-
-Claude Code (one project):
-
-```bash
-git clone https://github.com/petergyang/no-ai-slop.git .claude/skills/no-ai-slop
-```
-
-Codex:
-
-```bash
-git clone https://github.com/petergyang/no-ai-slop.git ~/.codex/skills/no-ai-slop
-```
-
-Any other agent: Point it at `SKILL.md`. The rules work as a system prompt for any model.
+"Install this skill globally: [https://github.com/petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop)"
 
 ## Use
 
@@ -56,7 +40,7 @@ The skill has two jobs. Editing is the main one.
 [your draft]
 ```
 
-You get back the edited draft plus a short What changed section. The skill runs an editor pass, then checks its own work against [eval.md](eval.md) before returning anything.
+You get back the edited draft plus a short What changed section. The skill makes the minimum effective edit, then checks its own work against [eval.md](eval.md) without requiring separate agents.
 
 **2. Detect slop.** Ask whether a piece reads as AI:
 
