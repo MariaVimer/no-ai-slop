@@ -22,14 +22,14 @@ Removes 20+ patterns of AI slop from writing. Also detects slop on request witho
 | Bullet lists *(new)* | converted to prose unless explicitly requested |
 | Emoji *(new)* | removed everywhere |
 | Em dashes *(new)* | replaced with comma, period, or parentheses |
-| "Signal" as vague buzzword *(new)* | "key signals," "weak signals," "signal vs. noise" |
+| Vague buzzword *(new)* | "delve," "signal," "signal vs. noise" |
 
 It also enforces the fundamentals: lead with the point, use active voice, prefer concrete numbers over abstractions.
 
 ## What's different from the original
 
 - Format-aware: different rules for Slack, email, blog, newsletter, and LinkedIn
-- Stricter on bullets (converted to prose by default), em dashes (banned entirely), and emoji (banned entirely)
+- Stricter on bullets (converted to prose by default), em dashes (banned entirely), and emoji (also banned entirely)
 - LinkedIn gets its own additional slop patterns
 - Feedback loop: after every edit, the skill asks for your final version, diffs it against its rewrite, and proposes entries to `voice-notes.md`
 - `voice-notes.md` accumulates writer-specific preferences across sessions
